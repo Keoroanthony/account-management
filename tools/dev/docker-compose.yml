@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  account-mgt-postgres:
+    image: postgres:12.2-alpine
+    container_name: account-mgt-postgres
+    environment:
+      - POSTGRES_DB=account_management
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=1234
+    ports:
+      - "5432:5432"
+    networks:
+      - net
+
+networks:
+  net:
+
